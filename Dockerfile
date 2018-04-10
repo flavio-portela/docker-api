@@ -10,7 +10,7 @@ COPY package-lock.json .
 RUN npm install nodemon -g
 RUN npm install && npm ls
 
-# Copy our code into the container
+# Copy our code into the image
 COPY . .
 
 # Expose the ports
