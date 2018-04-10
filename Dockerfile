@@ -4,12 +4,14 @@ FROM node:9.11
 # Set the working directory
 WORKDIR /code
 
-# Copy our code into the container
-ADD . .
+COPY package.json .
+COPY package-lock.json .
 
 # Install the dependecies
 RUN npm install nodemon -g
 RUN npm install && npm ls
+
+COPY . .
 
 # Expose the ports
 EXPOSE 3000
